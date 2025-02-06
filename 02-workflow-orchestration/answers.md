@@ -22,7 +22,32 @@ file: "green_tripdata_2020-04.csv"
 
 
 ### Question 3
+Trigger yellow backfill for 2020-01-01 through 2020-12-31.
+Execute the following query to get count.
 
+``` sql
+SELECT  COUNT(*)
+FROM    yellow_tripdata
+WHERE   1=1
+        AND filename IN 
+		(
+			'yellow_tripdata_2020-01.csv',
+			'yellow_tripdata_2020-02.csv',
+			'yellow_tripdata_2020-03.csv',
+			'yellow_tripdata_2020-04.csv',
+			'yellow_tripdata_2020-05.csv',
+			'yellow_tripdata_2020-06.csv',
+			'yellow_tripdata_2020-07.csv',
+			'yellow_tripdata_2020-08.csv',
+			'yellow_tripdata_2020-09.csv',
+			'yellow_tripdata_2020-10.csv',
+			'yellow_tripdata_2020-11.csv',
+			'yellow_tripdata_2020-12.csv'
+		);
+```
+
+
+### Question 4
 Trigger green backfill for 2020-01-01 through 2020-12-31.
 Execute the following query to get count.
 
@@ -47,31 +72,6 @@ WHERE 	1=1
 		);
 ```
 
-### Question 4
-
-Trigger yellow backfill for 2020-01-01 through 2020-12-31.
-Execute the following query to get count.
-
-``` sql
-SELECT  COUNT(*)
-FROM    green_tripdata
-WHERE   1=1
-        AND filename IN 
-		(
-			'green_tripdata_2020-01.csv',
-			'green_tripdata_2020-02.csv',
-			'green_tripdata_2020-03.csv',
-			'green_tripdata_2020-04.csv',
-			'green_tripdata_2020-05.csv',
-			'green_tripdata_2020-06.csv',
-			'green_tripdata_2020-07.csv',
-			'green_tripdata_2020-08.csv',
-			'green_tripdata_2020-09.csv',
-			'green_tripdata_2020-10.csv',
-			'green_tripdata_2020-11.csv',
-			'green_tripdata_2020-12.csv'
-		);
-```
 
 ### Question 5
 
